@@ -1,0 +1,71 @@
+<mat-card>
+  <mat-card-content>
+    <form [formGroup]="registrationFormGrp" class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="frmFName"
+          placeholder="JSmith"
+        />
+        <mat-error
+          *ngIf="registrationFormGrp.get('frmFName')!.hasError('required')"
+        >
+          Name is <strong>required</strong>
+        </mat-error> </mat-form-field
+      ><br />
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="frmLName"
+          placeholder="JSmith"
+        />
+        <mat-error
+          *ngIf="registrationFormGrp.get('frmLName')!.hasError('required')"
+        >
+          Name is <strong>required</strong>
+        </mat-error> </mat-form-field
+      ><br />
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email Address</mat-label>
+        <input
+          type="email"
+          matInput
+          formControlName="frmemailAddress"
+          placeholder="jeffersonThomas@gmail.com"
+        />
+        <mat-error
+          *ngIf="
+            registrationFormGrp.get('frmemailAddress')!.hasError('required')
+          "
+        >
+          Name is <strong>required</strong>
+        </mat-error>
+        <mat-error
+          *ngIf="registrationFormGrp.get('frmemailAddress')!.hasError('email')"
+        >
+          Email is <strong>invalid</strong>
+        </mat-error> </mat-form-field
+      ><br />
+
+      <button
+        (click)="UpdateUser()"
+        mat-fab
+        aria-label="Example icon button with a heart icon"
+      >
+        <mat-icon [matTooltip]="tooltipBtn">how_to_reg</mat-icon>
+      </button>
+      <button
+        (click)="Clear()"
+        mat-fab
+        aria-label="Example icon button with a heart icon"
+      >
+        <mat-icon matTooltip="Clear Form">delete_sweep</mat-icon>
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,160 @@
+<!-- <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">User Id</label>
+  <input
+    type="url"
+    [(ngModel)]="newUser.userId"
+    class="form-control"
+    id="txgImage"
+    placeholder="first"
+  />
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">First Name</label>
+  <input
+    type="text"
+    [(ngModel)]="newUser.firstName"
+    class="form-control"
+    id="txtDogName"
+    placeholder="Jefferson"
+  />
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+  <input
+    type="text"
+    [(ngModel)]="newUser.lastName"
+    class="form-control"
+    id="txtBreed"
+    placeholder="John"
+  />
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Email Address</label>
+  <input
+    type="number "
+    [(ngModel)]="newUser.emailAddress"
+    class="form-control"
+    id="numAge"
+    placeholder="fairprice@gamil.com"
+  />
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Password</label>
+  <input
+    type="text"
+    [(ngModel)]="newUser.password"
+    class="form-control"
+    id="txtBreed"
+    placeholder="Lab"
+  />
+</div>
+<button type="button" class="btn btn-warning" (click)="MakeMeAUser()">
+  Create an User
+</button> -->
+
+<mat-card>
+  <mat-card-content>
+    <form [formGroup]="registrationFormGrp" class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>UserID</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="frmUserId"
+          placeholder="John Smith"
+        />
+        <mat-error
+          *ngIf="registrationFormGrp.get('frmUserId')!.hasError('required')"
+        >
+          Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="frmFName"
+          placeholder="JSmith"
+        />
+        <mat-error
+          *ngIf="registrationFormGrp.get('frmFName')!.hasError('required')"
+        >
+          Name is <strong>required</strong>
+        </mat-error> </mat-form-field
+      ><br />
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="frmLName"
+          placeholder="JSmith"
+        />
+        <mat-error
+          *ngIf="registrationFormGrp.get('frmLName')!.hasError('required')"
+        >
+          Name is <strong>required</strong>
+        </mat-error> </mat-form-field
+      ><br />
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email Address</mat-label>
+        <input
+          type="email"
+          matInput
+          formControlName="frmemailAddress"
+          placeholder="jeffersonThomas@gmail.com"
+        />
+        <mat-error
+          *ngIf="
+            registrationFormGrp.get('frmemailAddress')!.hasError('required')
+          "
+        >
+          Name is <strong>required</strong>
+        </mat-error>
+        <mat-error
+          *ngIf="registrationFormGrp.get('frmemailAddress')!.hasError('email')"
+        >
+          Email is <strong>invalid</strong>
+        </mat-error> </mat-form-field
+      ><br />
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input
+          type="password"
+          matInput
+          formControlName="frmPassword"
+          placeholder="h4ck3r"
+        />
+        <mat-error
+          *ngIf="registrationFormGrp.get('frmPassword')!.hasError('required')"
+        >
+          Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <button
+        (click)="RegisterUser()"
+        mat-fab
+        aria-label="Example icon button with a heart icon"
+      >
+        <mat-icon [matTooltip]="tooltipBtn">how_to_reg</mat-icon>
+      </button>
+      <button
+        (click)="Clear()"
+        mat-fab
+        aria-label="Example icon button with a heart icon"
+      >
+        <mat-icon matTooltip="Clear Form">delete_sweep</mat-icon>
+      </button>
+    </form>
+    <br />
+    <br />
+    <button (click)="RedirectLogin()">
+      Alerady Have an account click here to log in instead
+    </button>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,44 @@
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Post Name</label>
+  <input
+    type="url"
+    [(ngModel)]="newPost.title"
+    class="form-control"
+    id="txgImage"
+    placeholder="first"
+  />
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label"
+    >Header Image URL</label
+  >
+  <input
+    type="text"
+    size="60"
+    [(ngModel)]="newPost.headerImage"
+    class="form-control"
+    id="txtDogName"
+    placeholder="https://www.travelandleisure.com/thmb/f-3j5QnS8FRCIPQGeitCxVDKVJA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/3-paris-social-niche1115-470f7989143d49f7a3def0ac3940988d.jpg"
+  />
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Post content</label>
+  <!-- <input
+    type="text"
+    [(ngModel)]="newPost.content"
+    class="form-control"
+    id="txtBreed"
+    placeholder="This is just a wonderful story about love and redemption"
+  /> -->
+
+  <angular-editor
+    [(ngModel)]="newPost.content"
+    class="form-control"
+    id="txtBreed"
+    [placeholder]="'This is just a wonderful story about love and redemption'"
+  ></angular-editor>
+</div>
+
+<button type="button" class="btn btn-warning" (click)="MakeMeAPost(newPost)">
+  Create a Post
+</button>

@@ -1,0 +1,36 @@
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Post Name</label>
+  <input
+    type="url"
+    [(ngModel)]="editPost.title"
+    class="form-control"
+    id="title"
+    placeholder="first"
+  />
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label"
+    >Header Image URL</label
+  >
+  <input
+    type="text"
+    [(ngModel)]="editPost.headerImage"
+    class="form-control"
+    id="image"
+    placeholder="https://www.travelandleisure.com/thmb/f-3j5QnS8FRCIPQGeitCxVDKVJA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/3-paris-social-niche1115-470f7989143d49f7a3def0ac3940988d.jpg"
+  />
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Post content</label>
+  <input
+    type="text"
+    id="comments"
+    [(ngModel)]="editPost.content"
+    class="form-control"
+    placeholder="This is just a wonderful story about love and redemption"
+  />
+</div>
+
+<button type="button" class="btn btn-warning" (click)="EditAPost(editPost)">
+  Update Post Number {{ this.postnumber }}
+</button>

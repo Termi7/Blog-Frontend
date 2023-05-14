@@ -1,0 +1,30 @@
+<div class="card" style="width: 18rem">
+  <div class="card-body">
+    <h5 class="card-title">Login</h5>
+    <p class="card-text"></p>
+    <div class="alert alert-danger" role="alert" *ngIf="errorOccured">
+      Bad Username and Password!
+    </div>
+    <div class="mb-3">
+      <label for="txtUserName" class="form-label">UserID</label>
+      <input
+        [(ngModel)]="userID"
+        type="text"
+        class="form-control"
+        id="txtUserName"
+        placeholder="jsmith"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="txtPassword" class="form-label">Password</label>
+      <input
+        [(ngModel)]="password"
+        type="password"
+        class="form-control"
+        id="txtPassword"
+        placeholder="3l33tP@55w0rd"
+      />
+    </div>
+    <button (click)="Login()" class="btn btn-danger">Login</button>
+  </div>
+</div>

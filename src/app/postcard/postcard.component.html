@@ -1,0 +1,56 @@
+<div class="card" style="width: 18rem" style="margin-bottom: 10px">
+  <img
+    [src]="CurrentPost?.headerImage"
+    class="card-img-top"
+    alt="..."
+    height="300"
+    onError="this.src='https://ualr.edu/elearning/files/2020/10/No-Photo-Available.jpg'"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ CurrentPost?.postId }}</h5>
+    <h5 class="card-title">Created by :{{ CurrentPost?.userId }}</h5>
+    <p class="card-text"></p>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">Title:{{ CurrentPost?.title }}</div>
+
+        <div class="col">Created date:{{ CurrentPost?.createdDate }}</div>
+        <div class="col">Last updated:{{ CurrentPost?.lastUpdated }}</div>
+        <!-- <br /> -->
+      </div>
+      <div class="col">content: {{ CurrentPost?.content }}</div>
+      <div class="col" *ngIf="">content: {{ CurrentPost?.content }}</div>
+      <div class="col" *ngIf="commentArray">
+        {{ commentArray.length }} Comment
+      </div>
+      <div *ngFor="let commentvalue of commentArray">
+        {{ commentvalue.userId }} wrote: {{ commentvalue.comment }}
+      </div>
+      <!-- <div class="col" *ngIf="">{{ .content }}</div> -->
+    </div>
+  </div>
+  <!-- *ngIf="" -->
+
+  <button class="btn btn-secondary" type="button" (click)="MakeCommentRoute()">
+    Add a Comment
+  </button>
+
+  <button
+    *ngIf="currentUser === CurrentPost?.userId"
+    class="btn btn-secondary"
+    type="button"
+    (click)="goToRedirect()"
+  >
+    Edit
+  </button>
+  <button
+    *ngIf="currentUser === CurrentPost?.userId"
+    class="btn btn-secondary"
+    type="button"
+    (click)="DeletePost()"
+  >
+    Delete
+  </button>
+</div>
+
+<!-- (click)="EditPost()" -->
