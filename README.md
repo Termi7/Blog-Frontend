@@ -30,6 +30,3 @@ To use the MyBlog application, follow these steps:
 3. Run `npm start` to start the application.
 4. Navigate to `http://localhost:4200` in your web browser.
 
-## Credits
-
-The MyBlog application was developed by [Your Name Here] in November 2022. The code is open-source and available on GitHub. Feel free to use it for your own projects or contribute to the project by submitting a pull request.
